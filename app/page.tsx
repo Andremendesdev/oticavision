@@ -18,27 +18,24 @@ import {
 export const revalidate = 60; // Revalida a cada 60 segundos
 
 export default async function Page() {
-  let siteSettings: { statusOverride?: string } | null = null;
   let services: Awaited<ReturnType<ReturnType<typeof getSanityClient>["fetch"]>>[] =
     [];
   let canalhaPhotos: typeof services = [];
 
   if (isSanityConfigured) {
     const client = getSanityClient();
-    siteSettings = await client.fetch(`*[_type == "siteSettings"][0]`);
     services = await client.fetch(`*[_type == "service"] | order(order asc)`);
     canalhaPhotos = await client.fetch(
       `*[_type == "canalhaPhoto"] | order(order asc)`
     );
   }
 
-  const statusOverride = siteSettings?.statusOverride || "auto";
   const whatsappLink = getDefaultWhatsAppUrl();
 
   return (
     <MotionProvider>
       <main className="min-h-screen" style={{ background: "#0a0a0a" }}>
-        <Navbar statusOverride={statusOverride} />
+        <Navbar />
         <Hero whatsappLink={whatsappLink} />
         <Services services={services} />
         <GalleryPic photos={canalhaPhotos} />

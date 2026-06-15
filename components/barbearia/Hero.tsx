@@ -196,8 +196,7 @@ export default function Hero({
               }}
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className="hero-wa-cta group inline-flex items-center gap-2.5 rounded-2xl px-7 py-4 lg:px-6 lg:py-3 text-sm lg:text-xs font-semibold uppercase tracking-widest w-full sm:w-auto justify-center"
-              style={{ opacity: whatsappLink ? 1 : 0.55 }}
+              className="hero-wa-cta group inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-br from-[#FBBF24] via-[#F59E0B] to-[#D97706] px-7 py-4 text-sm font-semibold uppercase tracking-widest w-full sm:w-auto justify-center lg:px-6 lg:py-3 lg:text-xs"
               aria-label="Fale conosco pelo WhatsApp"
             >
               {/* WhatsApp icon */}

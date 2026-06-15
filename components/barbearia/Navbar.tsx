@@ -1,14 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Kaushan_Script } from "next/font/google";
 import { M } from "./safe-motion";
-import StatusBadge from "./StatusBadge";
-import { siteName } from "@/lib/site/env";
 
-
-
-export default function Navbar({ statusOverride = "auto" }: { statusOverride?: string }) {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -84,10 +79,8 @@ export default function Navbar({ statusOverride = "auto" }: { statusOverride?: s
             </span>
           </div>
 
-          {/* Direita: status */}
-          <div className="flex items-center justify-end">
-            <StatusBadge inline statusOverride={statusOverride} />
-          </div>
+          {/* Direita: espaço para balancear o grid */}
+          <div aria-hidden="true" />
         </div>
       </div>
 
