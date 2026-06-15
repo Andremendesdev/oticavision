@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { getWhatsAppUrl } from "@/lib/site/env"
 import { M } from "./safe-motion"
 
@@ -10,6 +11,21 @@ export default function FloatingWhatsApp({
   whatsappLink?: string | null
   whatsappConfigured?: boolean
 }) {
+  const [pastHero, setPastHero] = useState(false)
+
+  useEffect(() => {
+    const hero = document.getElementById("hero")
+    if (!hero) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setPastHero(!entry.isIntersecting),
+      { threshold: 0 }
+    )
+
+    observer.observe(hero)
+    return () => observer.disconnect()
+  }, [])
+
   const handleClick = () => {
     const url = whatsappLink ?? getWhatsAppUrl("Olá! Gostaria de saber mais sobre os produtos da ótica.")
     if (url) window.open(url, "_blank")
@@ -19,30 +35,32 @@ export default function FloatingWhatsApp({
     <M.button
       onClick={handleClick}
       disabled={!whatsappConfigured}
-      initial={{ opacity: 0, scale: 0, y: 48 }}
+      initial={false}
       animate={{
-        opacity: whatsappConfigured ? 1 : 0.55,
-        scale: 1,
-        y: 0,
+        opacity: pastHero ? (whatsappConfigured ? 1 : 0.55) : 0,
+        scale: pastHero ? 1 : 0,
+        y: pastHero ? 0 : 48,
       }}
       transition={{
-        delay: 2,
-        duration: 0.55,
+        duration: 0.45,
         type: "spring",
         stiffness: 260,
         damping: 18,
       }}
-      whileHover={whatsappConfigured ? { scale: 1.1, y: -2 } : undefined}
-      whileTap={whatsappConfigured ? { scale: 0.92 } : undefined}
+      whileHover={pastHero && whatsappConfigured ? { scale: 1.1, y: -2 } : undefined}
+      whileTap={pastHero && whatsappConfigured ? { scale: 0.92 } : undefined}
       aria-label="Fale com nossa ótica pelo WhatsApp"
+      aria-hidden={!pastHero}
+      tabIndex={pastHero ? 0 : -1}
       className="fixed bottom-6 right-6 z-50 flex size-14 items-center justify-center rounded-full transition-colors duration-300 disabled:cursor-default"
       style={{
         background: "#16a34a",
         border: "2px solid #22c55e",
         boxShadow: "0 0 20px rgba(34,197,94,0.4)",
+        pointerEvents: pastHero ? "auto" : "none",
       }}
       onMouseEnter={(e) => {
-        if (!whatsappConfigured) return
+        if (!whatsappConfigured || !pastHero) return
         const el = e.currentTarget
         el.style.background = "#22c55e"
         el.style.boxShadow = "0 0 32px rgba(34,197,94,0.6)"
@@ -53,20 +71,20 @@ export default function FloatingWhatsApp({
         el.style.boxShadow = "0 0 20px rgba(34,197,94,0.4)"
       }}
     >
-      {/* Anel pulsante */}
-      <M.span
-        className="absolute inset-0 rounded-full border-2 border-green-400/40"
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: [0, 0.6, 0], scale: [1, 1.35, 1.5] }}
-        transition={{
-          delay: 2.4,
-          duration: 1.2,
-          repeat: Infinity,
-          repeatDelay: 2.5,
-          ease: "easeOut",
-        }}
-        aria-hidden="true"
-      />
+      {pastHero && (
+        <M.span
+          className="absolute inset-0 rounded-full border-2 border-green-400/40"
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: [0, 0.6, 0], scale: [1, 1.35, 1.5] }}
+          transition={{
+            duration: 1.2,
+            repeat: Infinity,
+            repeatDelay: 2.5,
+            ease: "easeOut",
+          }}
+          aria-hidden="true"
+        />
+      )}
       <svg
         viewBox="0 0 448 512"
         className="relative z-10 size-6 fill-white"

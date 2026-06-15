@@ -56,14 +56,14 @@ export default function Gallery() {
         >
           <M.span
             variants={fadeUpItem}
-            className="hero-eyebrow mb-4 inline-flex items-center rounded-full border px-3.5 py-1.5 text-[9px] uppercase tracking-[0.22em] sm:text-[10px]"
+            className="hero-eyebrow mb-4 inline-flex items-center rounded-full border px-3.5 py-1.5 text-[8px] uppercase tracking-[0.22em] sm:text-[9px]"
           >
             Loja Física & Online
           </M.span>
 
           <M.h2
             variants={fadeUpItem}
-            className="font-serif text-2xl font-semibold leading-[1.15] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[2.65rem]"
+            className="font-serif text-xl font-semibold leading-[1.15] tracking-tight text-white sm:text-2xl md:text-3xl lg:text-[2.25rem]"
           >
             Encontre a armação{" "}
             <span className="text-[#FBBF24]">
@@ -74,7 +74,7 @@ export default function Gallery() {
 
           <M.p
             variants={fadeUpItem}
-            className="mt-4 max-w-md text-sm leading-relaxed text-zinc-400 sm:text-base"
+            className="mt-4 max-w-md text-xs leading-relaxed text-zinc-400 sm:text-sm"
           >
             Centenas de modelos em estoque. Envie uma foto e receba indicações personalizadas direto no{" "}
             <strong className="text-white font-medium">WhatsApp</strong> — sem precisar sair de casa.
@@ -84,7 +84,7 @@ export default function Gallery() {
             {HIGHLIGHTS.map(({ label, icon: Icon }) => (
               <li
                 key={label}
-                className="inline-flex items-center gap-1.5 rounded-full border border-zinc-600/40 bg-white/5 px-3 py-1.5 text-[10px] font-medium tracking-wide text-zinc-400 sm:text-[11px]"
+                className="inline-flex items-center gap-1.5 rounded-full border border-zinc-600/40 bg-white/5 px-3 py-1.5 text-[9px] font-medium tracking-wide text-zinc-400 sm:text-[10px]"
               >
                 <Icon
                   className="size-3 shrink-0 text-[#F59E0B]/80"
@@ -101,10 +101,10 @@ export default function Gallery() {
               onClick={scrollToCollection}
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-full border border-[#F59E0B]/50 px-7 py-3.5 text-xs font-medium tracking-wide text-[#F59E0B] bg-transparent transition-colors hover:bg-[#F59E0B]/10 sm:w-auto sm:min-w-[220px] md:text-sm"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-full border border-[#F59E0B]/50 px-7 py-3.5 text-[11px] font-medium tracking-wide text-[#F59E0B] bg-transparent transition-colors hover:bg-[#F59E0B]/10 sm:w-auto sm:min-w-[220px] md:text-xs"
             >
               <Eye className="size-4 shrink-0" aria-hidden="true" />
-              Ver produtos
+              Chamar no WhatsApp
             </M.button>
           </M.div>
         </M.div>
@@ -119,10 +119,10 @@ export default function Gallery() {
         className="pointer-events-none absolute bottom-6 right-5 hidden text-right md:block lg:right-10"
         aria-hidden="true"
       >
-        <p className="text-[10px] tracking-[0.25em] text-white/40">
+        <p className="text-[9px] tracking-[0.25em] text-white/40">
           Coleção disponível
         </p>
-        <p className="mt-1 font-serif text-lg font-normal text-white/65">Novidades na loja</p>
+        <p className="mt-1 font-serif text-base font-normal text-white/65">Novidades na loja</p>
       </M.div>
 
       <div

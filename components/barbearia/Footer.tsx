@@ -4,15 +4,15 @@ export default function Footer() {
   return (
     <footer className="border-t border-stone-200/80 bg-[#f2efe9] px-6 py-10">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="font-serif text-xl font-semibold tracking-wide text-slate-900 sm:text-2xl">
+        <p className="font-serif text-lg font-semibold tracking-wide text-slate-900 sm:text-xl">
           Ótica Vision
         </p>
 
-        <p className="mt-2 text-[10px] uppercase tracking-[0.22em] text-red-600/80">
+        <p className="mt-2 text-[9px] uppercase tracking-[0.22em] text-red-600/80">
           Óculos de grau · Solar · Lentes de contato
         </p>
 
-        <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-slate-500">
+        <p className="mx-auto mt-5 max-w-md text-xs leading-relaxed text-slate-500 sm:text-sm">
           {address}
         </p>
 
@@ -26,7 +26,7 @@ export default function Footer() {
         />
 
         <p
-          className="text-xs text-slate-400"
+          className="text-[11px] text-slate-400"
           suppressHydrationWarning
         >
           © {new Date().getFullYear()} Ótica Vision · Todos os direitos reservados

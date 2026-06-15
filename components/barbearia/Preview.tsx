@@ -66,17 +66,17 @@ export default function Preview() {
         transition={sectionTransition()}
         className="relative z-10 mb-14 px-5 text-center"
       >
-        <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-[10px] uppercase tracking-[0.28em] text-red-600">
+        <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-[9px] uppercase tracking-[0.28em] text-red-600">
           <span className="size-1.5 rounded-full bg-red-500" aria-hidden="true" />
           Google Reviews
         </span>
 
-        <h2 className="font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+        <h2 className="font-serif text-2xl font-semibold tracking-tight text-slate-900 md:text-4xl">
           O que falam da{" "}
           <span className="text-[#ef4444]">Ótica Vision</span>
         </h2>
 
-        <p className="mx-auto mt-5 max-w-xl text-sm text-slate-500 md:text-base">
+        <p className="mx-auto mt-5 max-w-xl text-xs text-slate-500 md:text-sm">
           Quem escolhe enxergar melhor, escolhe a Ótica Vision.
         </p>
 
@@ -125,16 +125,16 @@ export default function Preview() {
                 ))}
               </div>
 
-              <p className="mb-6 pl-2 text-sm leading-relaxed text-slate-600">
+              <p className="mb-6 pl-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
                 &ldquo;{review.text}&rdquo;
               </p>
 
               <div className="flex items-center justify-between pl-2">
                 <div>
-                  <p className="text-sm font-medium text-slate-800">
+                  <p className="text-xs font-medium text-slate-800 sm:text-sm">
                     {review.name}
                   </p>
-                  <span className="text-xs text-slate-400">
+                  <span className="text-[11px] text-slate-400">
                     Cliente verificado
                   </span>
                 </div>
@@ -157,7 +157,7 @@ export default function Preview() {
 
       {isGoogleReviewConfigured && (
         <div className="relative z-10 mt-20 flex flex-col items-center justify-center px-5 text-center">
-          <p className="mb-6 text-sm text-slate-500 md:text-base">
+          <p className="mb-6 text-xs text-slate-500 md:text-sm">
             Ficou satisfeito com o atendimento?
             <span className="mt-1 block text-slate-700">
               Deixe sua avaliação no Google.
@@ -170,7 +170,7 @@ export default function Preview() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-3 rounded-full border border-red-300 px-7 py-3.5 text-xs font-medium tracking-wide text-red-600 transition-colors hover:border-red-400 hover:bg-red-50 md:text-sm"
+            className="inline-flex items-center gap-3 rounded-full border border-red-300 px-7 py-3.5 text-[11px] font-medium tracking-wide text-red-600 transition-colors hover:border-red-400 hover:bg-red-50 md:text-xs"
           >
             <svg viewBox="0 0 488 512" className="h-4 w-4 fill-current" aria-hidden="true">
               <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 122.3 24.5 165 64.9l-67 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.2 156.6 153.7 156.6 98.2 0 135.1-70.5 140.8-107H248v-85.8h236.1c2.3 12.7 3.9 24.9 3.9 42z" />

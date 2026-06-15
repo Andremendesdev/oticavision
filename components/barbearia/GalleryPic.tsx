@@ -67,18 +67,18 @@ export default function GalleryPic({ photos = [] }: { photos?: unknown[] }) {
           className="mb-14"
         >
           <span
-            className="text-[10px] tracking-[0.4em] uppercase font-semibold block mb-3"
+            className="text-[9px] tracking-[0.4em] uppercase font-semibold block mb-3"
             style={{ color: "#ef4444" }}
           >
             Descubra o seu estilo
           </span>
           <h2
-            className="font-serif text-3xl sm:text-4xl font-bold tracking-tight"
+            className="font-serif text-2xl sm:text-3xl font-bold tracking-tight"
             style={{ color: "#0f172a" }}
           >
             Nossa Coleção
           </h2>
-          <p className="mt-3 text-slate-400 text-sm sm:text-base max-w-sm">
+          <p className="mt-3 text-slate-400 text-xs sm:text-sm max-w-sm">
             Escolha a linha que combina com você.
           </p>
         </M.div>
@@ -100,7 +100,7 @@ export default function GalleryPic({ photos = [] }: { photos?: unknown[] }) {
                 <button
                   key={col.id}
                   onClick={() => setActiveId(col.id)}
-                  className="relative text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 w-full"
+                  className="relative text-left px-4 py-3 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 w-full"
                   style={{
                     background: isActive ? "rgba(239,68,68,0.07)" : "transparent",
                     color: isActive ? "#dc2626" : "#94a3b8",

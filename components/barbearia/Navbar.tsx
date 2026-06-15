@@ -20,7 +20,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative grid grid-cols-3 items-center h-16 text-white">
+        <div className="relative grid grid-cols-3 items-center h-16 text-white drop-shadow-md">
           {/* Esquerda: menu mobile / links desktop */}
           <div className="flex items-center justify-start">
             <button
@@ -73,7 +73,7 @@ export default function Navbar() {
           {/* Centro: nome */}
           <div className="flex items-center justify-center">
             <span
-              className="font-sans font-light text-base sm:text-lg leading-none text-[#FF2020] uppercase tracking-[0.25em] text-center"
+              className="font-sans font-light text-base sm:text-lg leading-none text-white uppercase tracking-[0.25em] text-center drop-shadow-md"
             >
               Ótica Vision
             </span>

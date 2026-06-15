@@ -37,21 +37,21 @@ export default function MapSection() {
           transition={sectionTransition()}
           className="mb-10 text-center"
         >
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-[10px] uppercase tracking-[0.28em] text-red-600">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-[9px] uppercase tracking-[0.28em] text-red-600">
             <span className="size-1.5 rounded-full bg-red-500" aria-hidden="true" />
             Venha nos visitar
           </span>
 
-          <h2 className="font-serif text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="font-serif text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
             Nos{" "}
             <span className="text-[#ef4444]">Encontre</span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-slate-500 sm:text-base">
+          <p className="mx-auto mt-4 max-w-md text-xs leading-relaxed text-slate-500 sm:text-sm">
             {address}
           </p>
 
-          <p className="mt-3 text-xs text-slate-400">
+          <p className="mt-3 text-[11px] text-slate-400">
             Ou fale com a gente pelo{" "}
             <span className="font-medium text-emerald-600">WhatsApp</span> — atendemos também online.
           </p>
