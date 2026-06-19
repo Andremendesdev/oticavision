@@ -11,7 +11,7 @@ export default function Hero({
   return (
     <section
       id="hero"
-      className="relative flex min-h-[92vh] flex-col justify-end overflow-hidden sm:min-h-[88vh] lg:min-h-screen"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden sm:min-h-[100svh] lg:min-h-[108vh] lg:h-[108vh]"
     >
       {/* Vídeo cinematográfico */}
       <video
@@ -47,7 +47,7 @@ export default function Hero({
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif text-3xl font-normal tracking-tight text-white sm:text-4xl lg:text-6xl xl:text-7xl"
+              className="font-serif text-4xl font-normal tracking-tight text-white sm:text-4xl lg:text-6xl xl:text-7xl"
             >
               Uma armação para cada olhar.
             </M.h1>
@@ -69,7 +69,7 @@ export default function Hero({
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-full bg-white px-6 py-2.5 text-[11px] font-medium uppercase tracking-[0.16em] text-slate-900 transition-colors hover:bg-white/90 sm:text-xs lg:min-h-11 lg:px-7 lg:py-3 lg:text-xs lg:tracking-[0.14em] xl:min-h-12 xl:px-8 xl:text-sm"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-white px-7 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-slate-900 transition-colors hover:bg-white/90 sm:min-h-10 sm:px-6 sm:py-2.5 sm:text-xs lg:min-h-11 lg:px-7 lg:py-3 lg:text-xs lg:tracking-[0.14em] xl:min-h-12 xl:px-8 xl:text-sm"
           >
             Ver armações
           </M.a>
@@ -88,12 +88,12 @@ export default function Hero({
           className="group mt-8 inline-flex items-center gap-4 sm:mt-10 lg:mt-10"
           style={{ opacity: whatsappLink ? 1 : 0.55 }}
         >
-          <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/85 transition-colors group-hover:text-white sm:text-xs lg:text-[11px] lg:tracking-[0.3em]">
+          <span className="text-[11px] font-medium uppercase tracking-[0.28em] text-white/85 transition-colors group-hover:text-white sm:text-xs lg:text-[11px] lg:tracking-[0.3em]">
             <span className="sm:hidden">WhatsApp</span>
             <span className="hidden sm:inline">Chamar no WhatsApp</span>
           </span>
           <span
-            className="h-px w-10 bg-white/50 transition-all duration-300 group-hover:w-14 group-hover:bg-white/90 sm:w-14 lg:w-16 lg:group-hover:w-24"
+            className="h-px w-12 bg-white/50 transition-all duration-300 group-hover:w-16 group-hover:bg-white/90 sm:w-14 sm:group-hover:w-14 lg:w-16 lg:group-hover:w-24"
             aria-hidden="true"
           />
         </M.a>

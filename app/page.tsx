@@ -1,5 +1,6 @@
 import Navbar from "@/components/barbearia/Navbar";
 import MotionProvider from "@/components/barbearia/MotionProvider";
+import LoadingScreen from "@/components/barbearia/LoadingScreen";
 import Hero from "@/components/barbearia/Hero";
 import Services from "@/components/barbearia/Services";
 import Gallery from "@/components/barbearia/Gallery";
@@ -34,20 +35,22 @@ export default async function Page() {
 
   return (
     <MotionProvider>
-      <main className="min-h-screen" style={{ background: "#0a0a0a" }}>
-        <Navbar />
-        <Hero whatsappLink={whatsappLink} />
-        <Services services={services} />
-        <GalleryPic photos={canalhaPhotos} />
-        <Gallery />
-        <Preview />
-        <MapSection />
-        <Footer />
-        <FloatingWhatsApp
-          whatsappLink={whatsappLink}
-          whatsappConfigured={isWhatsAppConfigured}
-        />
-      </main>
+      <LoadingScreen>
+        <main className="min-h-screen" style={{ background: "#0a0a0a" }}>
+          <Navbar />
+          <Hero whatsappLink={whatsappLink} />
+          <Services services={services} />
+          <GalleryPic photos={canalhaPhotos} />
+          <Gallery />
+          <Preview />
+          <MapSection />
+          <Footer />
+          <FloatingWhatsApp
+            whatsappLink={whatsappLink}
+            whatsappConfigured={isWhatsAppConfigured}
+          />
+        </main>
+      </LoadingScreen>
     </MotionProvider>
   );
 }

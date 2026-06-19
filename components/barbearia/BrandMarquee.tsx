@@ -1,7 +1,3 @@
-"use client";
-
-import { M } from "./safe-motion";
-
 const BRANDS = ["Ray-Ban", "Guess", "Aramis", "Vogue", "Kipling"] as const;
 
 export default function BrandMarquee() {
@@ -19,15 +15,7 @@ export default function BrandMarquee() {
         aria-hidden="true"
       />
 
-      <M.div
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          duration: 28,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="flex min-w-max items-center gap-10 px-6 sm:gap-14 sm:px-8"
-      >
+      <div className="brand-marquee-track items-center gap-10 px-6 sm:gap-14 sm:px-8">
         {[...BRANDS, ...BRANDS].map((brand, index) => (
           <span
             key={`${brand}-${index}`}
@@ -40,7 +28,7 @@ export default function BrandMarquee() {
             />
           </span>
         ))}
-      </M.div>
+      </div>
     </div>
   );
 }
