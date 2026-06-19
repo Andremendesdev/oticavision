@@ -60,7 +60,7 @@ export default function LoadingScreen({
           aria-busy={phase !== "done"}
         >
           <div className="loading-screen-content">
-            <h1 className="font-serif text-3xl font-normal tracking-tight text-white sm:text-4xl">
+            <h1 className="font-sans text-3xl font-light uppercase tracking-[0.25em] leading-none text-white sm:text-4xl">
               Ótica Vision
             </h1>
           </div>
